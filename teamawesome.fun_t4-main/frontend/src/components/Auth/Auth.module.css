@@ -1,0 +1,142 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Typography */
+.title {
+    color: #4a5568;
+    font-size: clamp(1.75rem, 5vw, 2.5rem); /* Responsive font size */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Form Elements */
+.formGroup {
+    margin-bottom: 1.25rem;
+}
+
+.label {
+    display: block;
+    color: #4a5568;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Buttons */
+.button {
+    width: 100%;
+    padding: 0.875rem; 
+    font-family: var(--font-secondary);
+}
+
+/* Link Text */
+.toggleText {
+    text-align: center;
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+}
+
+/* Status Messages */
+.error {
+    text-align: center;
+    padding: .85rem;
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #c53030;
+    background: #fae6e6;
+    border-radius: 12px;
+}
+
+.success{
+    text-align: center;
+    padding: .85rem;
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #0a8c4d;
+    background: #fae6e6;
+    border-radius: 12px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================ */
+/* RESPONSIVE ADJUSTMENTS */
+/* ================ */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .title {
+        margin-bottom: 0.25rem;
+    }
+    
+    .subtitle {
+        margin-bottom: 1rem;
+    }
+    
+    .formGroup {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .card {
+        padding: 1.25rem;
+    }
+    
+    .input {
+        padding: 0.625rem 0.875rem;
+    }
+    
+    .button {
+        padding: 0.75rem;
+    }
+}

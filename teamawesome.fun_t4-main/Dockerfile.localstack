@@ -1,0 +1,8 @@
+# Use official LocalStack image
+FROM localstack/localstack:latest
+
+# Copy your init script into the expected folder inside the container
+COPY localstack-init/init-s3.sh /etc/localstack/init/ready.d/init-s3.sh
+
+# Make sure it's executable
+RUN chmod +x /etc/localstack/init/ready.d/init-s3.sh

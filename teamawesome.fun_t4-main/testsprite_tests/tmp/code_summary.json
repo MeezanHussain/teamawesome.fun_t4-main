@@ -1,0 +1,36 @@
+{
+  "tech_stack": {
+    "frontend": {
+      "framework": "React (Vite)",
+      "language": "JavaScript",
+      "styling": "CSS (global and module)",
+      "routing": "React Router",
+      "containerization": "Docker"
+    },
+    "backend": {
+      "framework": "Node.js (Express.js)",
+      "language": "JavaScript",
+      "database": "PostgreSQL",
+      "ORM/DB": "pg module",
+      "authentication": "JWT",
+      "validation": "Zod, custom middleware",
+      "cloud_storage": "AWS S3 (mocked via LocalStack)",
+      "containerization": "Docker"
+    },
+    "devops": {
+      "containerization": "Docker Compose",
+      "local_cloud_emulation": "LocalStack"
+    }
+  },
+  "features": [
+    "User authentication (signup, login, JWT)",
+    "User profile management (view, edit, delete, bio, profile picture, privacy)",
+    "Project upload and management (title, description, images, likes)",
+    "Follow system (follow, unfollow, follow requests, followers summary)",
+    "Link management (add, edit, remove links to user profile)",
+    "Error handling and input validation",
+    "Social features (view other profiles, follow network)",
+    "File uploads to S3-compatible storage (via LocalStack)",
+    "Containerized development environment"
+  ]
+}

@@ -1,0 +1,48 @@
+/* Import fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+/* Apply theme variables */
+@import './theme.css';
+
+/* Additional global styles */
+body {
+  font-family: var(--font-primary);
+  line-height: 1.5;
+  color: rgb(var(--color-text));
+  background-color: rgb(var(--color-bg));
+}
+
+/* Smooth transitions for theme changes */
+body, .btn, .card, .input {
+  transition: 
+    background-color var(--transition-normal),
+    color var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+/* Utility classes for text */
+.text-primary {
+  color: rgb(var(--color-primary));
+}
+
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--color-primary), 1) 0%,
+    rgba(var(--color-secondary), 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Responsive images */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Aspect ratio containers */
+.aspect-ratio-16\/9 {
+  aspect-ratio: 16 / 9;
+}

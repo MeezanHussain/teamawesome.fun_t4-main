@@ -1,0 +1,443 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 1rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #718096;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab:hover {
+  color: #667eea;
+}
+
+.tab.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Connections Grid */
+.connectionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.connectionCard {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.connectionCard:hover {
+  transform: translateY(-3px);
+}
+
+.connectionCard h3 {
+  font-size: 2.5rem;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.connectionCard p {
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.connectionCard button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.connectionCard button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
+}
+
+/* User List */
+.userList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.searchForm {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.searchForm input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 12px 0 0 12px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+}
+
+.searchForm button {
+  padding: 0 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.searchForm button:hover {
+  transform: translateY(-1px);
+}
+
+.clearButton {
+  padding: 0 1.5rem;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.clearButton:hover {
+  background: #c53030;
+  transform: translateY(-1px);
+}
+
+/* User / Request Card */
+.userCard,
+.requestCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.userCard:hover,
+.requestCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.userAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.requestDate {
+  font-size: 0.85rem;
+  color: #718096;
+  margin: 0;
+  font-style: italic;
+}
+
+.userCard h4 {
+  font-size: 1.1rem;
+  color: #2d3748;
+  margin-bottom: 0.25rem;
+}
+
+.userBio,
+.userJob {
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+  color: #718096;
+}
+
+.userJob {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.userActions,
+.requestActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Buttons */
+.followButton,
+.unfollowButton,
+.viewButton,
+.acceptButton,
+.rejectButton,
+.requestedButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.followButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+
+.followButton:hover {
+  transform: translateY(-1px);
+}
+
+.unfollowButton {
+  background: transparent;
+  color: #4a5568;
+  border: 1px solid #a0aec0;
+}
+
+.requestedButton {
+  background: #718096;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.removeFollowerButton {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.removeFollowerButton:hover {
+  background-color: #d32f2f;
+}
+
+.loginButton {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.loginButton:hover {
+  background-color: #1565c0;
+}
+
+.viewButton {
+  background: transparent;
+  color: #667eea;
+  border: 1px solid #667eea;
+}
+
+.viewButton:hover {
+  background-color: #e6f0fa;
+}
+
+.acceptButton {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.2);
+}
+
+.acceptButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+}
+
+.rejectButton {
+  background: transparent;
+  color: #e53e3e;
+  border: 1px solid #e53e3e;
+}
+
+.rejectButton:hover {
+  background: #fff5f5;
+  transform: translateY(-1px);
+}
+
+/* States */
+.loading,
+.error,
+.noResults {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+.loading {
+  color: #718096;
+}
+
+.error {
+  color: #c53030;
+  background: #fae6e6;
+  border-radius: 12px;
+}
+
+.noResults {
+  color: #718096;
+  font-style: italic;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  border: 2px dashed #e2e8f0;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.emptySubtext {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0 0;
+  font-style: normal;
+}
+
+/* Private Badge */
+.privateBadge {
+  font-size: 0.7rem;
+  background-color: #edf2f7;
+  color: #4a5568;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.userCard[data-private="true"] {
+  opacity: 0.85;
+  background-color: #f9f9f9;
+}
+
+.userCard[data-private="true"] .userInfo {
+  cursor: default;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .userCard,
+  .requestCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .userActions,
+  .requestActions {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

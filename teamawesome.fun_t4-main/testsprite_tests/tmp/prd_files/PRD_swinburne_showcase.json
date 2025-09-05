@@ -1,0 +1,94 @@
+{
+  "project_title": "TeamAwesome.fun",
+  "project_overview": "A web platform to showcase student projects, starting with current and selected projects from Swinburne University and other universities. The platform promotes individual student profiles, logs team member contributions, and enables project discovery. Messaging between users is out of scope for this PRD.",
+  "goals": [
+    "Highlight student work and achievements",
+    "Enable universities to curate and display selected projects",
+    "Promote individual student profiles and their contributions",
+    "Provide a seamless, visually appealing experience for browsing and searching projects"
+  ],
+  "current_features": [
+    "User authentication (signup, login, JWT)",
+    "User profile management (view, edit, delete, bio, profile picture, privacy)",
+    "Project upload and management (title, description, images, likes)",
+    "Follow system (follow, unfollow, follow requests, followers summary)",
+    "Link management (add, edit, remove links to user profile)",
+    "Error handling and input validation",
+    "Social features (view other profiles, follow network)",
+    "File uploads to S3-compatible storage (via LocalStack)",
+    "Containerized development environment"
+  ],
+  "critical_issues": [
+    "API response structure mismatch between backend and frontend for follow and project counts/lists, causing UI bugs.",
+    "State sync issues after follow/unfollow/request actions; UI does not always refresh all relevant lists.",
+    "Ambiguous button logic for follow/unfollow/requested states, especially for private profiles.",
+    "Error messages are not always surfaced to the user or are too generic.",
+    "Redundant API calls and missing loading indicators in some async actions.",
+    "No confirmation dialogs for destructive actions (e.g., unfollow, delete project).",
+    "Project like/favorite system is not fully implemented or integrated in the UI.",
+    "No advanced search/filter for projects by university, tags, or contributors.",
+    "No clear logging or display of team member contributions on project pages."
+  ],
+  "sprints": [
+    {
+      "sprint": 1,
+      "title": "Core Platform & Project Showcasing",
+      "duration_weeks": 3,
+      "objectives": [
+        "Polish and finalize user authentication and profile management (already implemented, needs minor refinement)",
+        "Ensure robust project upload (title, description, images) and display (already implemented, needs UI/UX polish)",
+        "Implement and refine project listing and detail views (UI/UX, error handling, likes)",
+        "Enable university/project tagging and filtering (new)",
+        "Basic admin interface for university project curation (new)",
+        "Responsive UI/UX improvements for all core flows (refinement)"
+      ],
+      "deliverables": [
+        "Stable user registration/login/logout",
+        "Profile edit and view (with bio, picture, links)",
+        "Project upload form and gallery view",
+        "Project detail page (with images, description, contributors, likes)",
+        "University/project tags and filters",
+        "Admin: Add/remove featured projects"
+      ]
+    },
+    {
+      "sprint": 2,
+      "title": "Team Contributions & Social Features",
+      "duration_weeks": 3,
+      "objectives": [
+        "Fix follow system state sync and API/UI mismatches (critical)",
+        "Robust error handling and user feedback for follow and project actions (critical)",
+        "Improve button logic for follow/unfollow/requested states (critical)",
+        "Log and display individual team member contributions on project pages (new)",
+        "Profile: Contributions tab/section (new)",
+        "Accessibility and usability improvements (refinement)"
+      ],
+      "deliverables": [
+        "Project page: Team member list and contribution logs",
+        "Profile: Contributions tab/section",
+        "Follow network page (followers/following, refined)",
+        "Improved error messages and validation UI",
+        "Accessibility audit and fixes"
+      ]
+    },
+    {
+      "sprint": 3,
+      "title": "Advanced Features, Polish & Deployment",
+      "duration_weeks": 3,
+      "objectives": [
+        "Implement project like/favorite system (refinement)",
+        "Enable advanced search and filtering (by university, tags, contributors) (new)",
+        "Finalize admin tools for project/university management (new)",
+        "Prepare for production deployment (security, performance, docs) (refinement)",
+        "Comprehensive testing and bug fixing (refinement)"
+      ],
+      "deliverables": [
+        "Like/favorite button on projects (refined)",
+        "Advanced search/filter UI",
+        "Admin: University/project management tools",
+        "Production-ready deployment (Docker, docs, envs)",
+        "Test suite and bugfixes"
+      ]
+    }
+  ]
+} 

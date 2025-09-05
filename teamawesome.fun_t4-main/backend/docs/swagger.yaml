@@ -1,0 +1,121 @@
+
+openapi: 3.0.3
+info:
+  title: TeamAwesome Backend API
+  description: API documentation for user authentication, profile management, and links
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/api
+    description: Local development server
+
+paths:
+  /auth/signup:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [firstName, lastName, email, password]
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: User created
+        '409':
+          description: User already exists
+
+  /auth/login:
+    post:
+      summary: Log in an existing user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Successful login with token
+        '401':
+          description: Invalid credentials
+
+  /profile:
+    get:
+      summary: Get current user's profile
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: User profile returned
+        '401':
+          description: Unauthorized
+
+  /profile/bio:
+    put:
+      summary: Update user bio
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bio:
+                  type: string
+      responses:
+        '200':
+          description: Bio updated
+
+  /profile/links:
+    post:
+      summary: Add a new user link
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [title, url]
+              properties:
+                title:
+                  type: string
+                url:
+                  type: string
+      responses:
+        '201':
+          description: Link added
+
+    get:
+      summary: Get all user links
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of user links
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
