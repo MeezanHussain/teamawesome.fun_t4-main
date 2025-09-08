@@ -1,0 +1,173 @@
+.unitSelector {
+  position: relative;
+  width: 100%;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+}
+
+.required {
+  color: #e53e3e;
+}
+
+.dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.selectedUnit {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  min-height: 50px;
+}
+
+.selectedUnit:hover {
+  border-color: #cbd5e0;
+}
+
+.selectedUnit:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.unitInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.unitCode {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+}
+
+.unitName {
+  color: #4a5568;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.placeholder {
+  color: #a0aec0;
+  font-style: italic;
+}
+
+.arrow {
+  color: #a0aec0;
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.searchBox {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: #667eea;
+}
+
+.unitsList {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.unitItem {
+  padding: 0.75rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f7fafc;
+  transition: background-color 0.15s ease;
+}
+
+.unitItem:hover {
+  background-color: #f7fafc;
+}
+
+.unitItem.selected {
+  background-color: #edf2f7;
+  border-left: 4px solid #667eea;
+}
+
+.unitItem:last-child {
+  border-bottom: none;
+}
+
+.unitItem .unitCode {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.unitItem .unitName {
+  color: #4a5568;
+  font-size: 0.8rem;
+  margin: 0.25rem 0;
+  display: block;
+}
+
+.unitFaculty {
+  color: #718096;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.noResults {
+  padding: 1rem;
+  text-align: center;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dropdownMenu {
+    max-height: 250px;
+  }
+  
+  .unitsList {
+    max-height: 150px;
+  }
+}

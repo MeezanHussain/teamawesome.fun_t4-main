@@ -9,6 +9,7 @@ const path = require("path");
 const profileRoutes = require("./routes/profileRoutes");
 const authRoutes = require("./routes/authRoutes");
 const projectRoutes = require('./routes/projectRoutes');
+const swinburneProjectRoutes = require('./routes/swinburneProjectRoutes');
 
 // Import error handler
 const errorHandler = require("./middleware/errorHandler");
@@ -27,6 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/profile", profileRoutes);
 app.use("/api/auth", authRoutes);
 app.use('/api/projects', projectRoutes);
+app.use('/api/swinburne-projects', swinburneProjectRoutes);
 
 // Custom error handling for multer
 app.use((err, req, res, next) => {

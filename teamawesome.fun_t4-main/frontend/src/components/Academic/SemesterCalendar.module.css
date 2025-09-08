@@ -1,0 +1,148 @@
+.semesterCalendar {
+  width: 100%;
+}
+
+.label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+}
+
+.required {
+  color: #e53e3e;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.yearSelector {
+  display: flex;
+  flex-direction: column;
+}
+
+.subLabel {
+  font-size: 0.8rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.yearSelect {
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.yearSelect:hover {
+  border-color: #cbd5e0;
+}
+
+.yearSelect:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.semesterSelector {
+  display: flex;
+  flex-direction: column;
+}
+
+.semesterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem;
+}
+
+.semesterCard {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.semesterCard:hover {
+  border-color: #cbd5e0;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.semesterCard.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.15);
+}
+
+.semesterLabel {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.semesterPeriod {
+  color: #4a5568;
+  font-size: 0.7rem;
+}
+
+.selectedPeriod {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #f7fafc;
+  border-radius: 6px;
+  color: #2d3748;
+  font-size: 0.9rem;
+  border-left: 4px solid #667eea;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .calendarGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .semesterGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .semesterCard {
+    min-height: 50px;
+    padding: 0.5rem;
+  }
+
+  .semesterLabel {
+    font-size: 0.75rem;
+  }
+
+  .semesterPeriod {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .semesterGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .semesterCard {
+    padding: 0.75rem;
+  }
+}

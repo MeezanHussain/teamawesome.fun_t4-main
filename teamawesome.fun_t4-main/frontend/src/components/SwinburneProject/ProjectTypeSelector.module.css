@@ -1,0 +1,182 @@
+.projectTypeSelector {
+  width: 100%;
+}
+
+.label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+}
+
+.required {
+  color: #e53e3e;
+}
+
+.typesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.typeCard {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  min-height: 100px;
+  justify-content: center;
+}
+
+.typeCard:hover {
+  border-color: var(--type-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.typeCard.selected {
+  border-color: var(--type-color);
+  background: linear-gradient(135deg, 
+    color-mix(in srgb, var(--type-color) 5%, white) 0%, 
+    color-mix(in srgb, var(--type-color) 10%, white) 100%
+  );
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--type-color) 20%, transparent);
+}
+
+.typeIcon {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  filter: grayscale(0.3);
+  transition: filter 0.2s ease;
+}
+
+.typeCard.selected .typeIcon {
+  filter: grayscale(0);
+}
+
+.typeInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.typeLabel {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.typeDescription {
+  color: #4a5568;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--type-color);
+  color: white;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  animation: scaleIn 0.2s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Fallback for browsers that don't support color-mix */
+.typeCard.selected {
+  background: #f8f9ff;
+}
+
+.typeCard[style*="--type-color: #667eea"].selected {
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+}
+
+.typeCard[style*="--type-color: #48bb78"].selected {
+  background: linear-gradient(135deg, #f0fff4 0%, #e6ffef 100%);
+}
+
+.typeCard[style*="--type-color: #ed8936"].selected {
+  background: linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%);
+}
+
+.typeCard[style*="--type-color: #9f7aea"].selected {
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+}
+
+.typeCard[style*="--type-color: #38b2ac"].selected {
+  background: linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .typesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .typeCard {
+    min-height: 90px;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .typeIcon {
+    font-size: 1.5rem;
+  }
+
+  .typeLabel {
+    font-size: 0.8rem;
+  }
+
+  .typeDescription {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .typesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .typeCard {
+    flex-direction: row;
+    text-align: left;
+    padding: 0.75rem;
+    min-height: 70px;
+  }
+
+  .typeIcon {
+    margin-right: 0.75rem;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+  }
+
+  .typeInfo {
+    align-items: flex-start;
+  }
+}

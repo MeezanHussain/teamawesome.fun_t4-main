@@ -64,6 +64,12 @@ const ProjectUpload = () => {
         >
           View Gallery
         </button>
+        <button
+          className={styles.templateButton}
+          onClick={() => navigate("/template-select")}
+        >
+          Choose Template
+        </button>
       </div>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formGroup}>
