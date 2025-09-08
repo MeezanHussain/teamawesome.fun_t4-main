@@ -20,6 +20,8 @@ import ViewProfile from "./components/Profile/ViewProfile";
 // Swinburne Project Components
 import TemplateSelector from "./components/Templates/TemplateSelector";
 import SwinburneProjectCreate from "./components/SwinburneProject/SwinburneProjectCreate";
+import SwinburneProjectView from "./components/SwinburneProject/SwinburneProjectView";
+import TeamFinder from "./components/SwinburneProject/TeamFinder";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -37,6 +39,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/project-gallery" element={<ProjectGallery />} />
         <Route path="/template-select" element={<TemplateSelector />} />
         <Route path="/swinburne-project-create" element={<SwinburneProjectCreate />} />
+        <Route path="/swinburne-project/:projectId" element={<SwinburneProjectView />} />
+        <Route path="/team-finder" element={<TeamFinder />} />
         <Route path="/:userName" element={<ViewProfile />} />
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,408 @@
+.collaboratorManager {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h3 {
+  color: #2d3748;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.addButton {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addButton:hover {
+  background: #5a67d8;
+  transform: translateY(-1px);
+}
+
+.error {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #feb2b2;
+}
+
+.addForm {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.formHeader h4 {
+  color: #2d3748;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #718096;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.searchSection {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: end;
+}
+
+.searchInput {
+  position: relative;
+}
+
+.searchInput input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.searchInput input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.searchLoader {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.roleSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.roleSelector label {
+  font-size: 0.8rem;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.roleSelector select {
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  min-width: 120px;
+}
+
+.roleSelector select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.searchResults {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+}
+
+.userResult {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.15s ease;
+}
+
+.userResult:hover {
+  background: #f7fafc;
+}
+
+.userResult:last-child {
+  border-bottom: none;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userInfo h5 {
+  color: #2d3748;
+  margin: 0 0 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.userInfo p {
+  color: #4a5568;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.inviteButton {
+  background: #48bb78;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.8rem;
+}
+
+.inviteButton:hover {
+  background: #38a169;
+  transform: translateY(-1px);
+}
+
+.noResults {
+  padding: 2rem;
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+}
+
+.collaboratorsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.collaboratorCard {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 0.15s ease;
+}
+
+.collaboratorCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: #cbd5e0;
+}
+
+.collaboratorInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.collaboratorAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.collaboratorDetails h4 {
+  color: #2d3748;
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+}
+
+.collaboratorDetails p {
+  color: #4a5568;
+  margin: 0.125rem 0;
+  font-size: 0.9rem;
+}
+
+.collaboratorDetails small {
+  color: #718096;
+  font-size: 0.8rem;
+}
+
+.collaboratorRole {
+  display: flex;
+  align-items: center;
+}
+
+.roleSelect {
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  min-width: 100px;
+}
+
+.roleSelect:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.roleBadge {
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.roleBadge.leader {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.roleBadge.developer {
+  background: #bee3f8;
+  color: #2b6cb0;
+}
+
+.roleBadge.designer {
+  background: #e6fffa;
+  color: #2c7a7b;
+}
+
+.roleBadge.researcher {
+  background: #faf5ff;
+  color: #744210;
+}
+
+.roleBadge.writer {
+  background: #f0fff4;
+  color: #276749;
+}
+
+.collaboratorActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.invitedBadge {
+  background: #fef5e7;
+  color: #744210;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #c53030;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  font-size: 1rem;
+}
+
+.removeButton:hover {
+  background: #fed7d7;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #718096;
+}
+
+.emptyState p {
+  margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .searchSection {
+    grid-template-columns: 1fr;
+  }
+
+  .collaboratorCard {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .collaboratorInfo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .collaboratorRole,
+  .collaboratorActions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .addForm {
+    padding: 1rem;
+  }
+
+  .collaboratorCard {
+    padding: 1rem;
+  }
+
+  .collaboratorAvatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .userAvatar {
+    width: 35px;
+    height: 35px;
+  }
+}
